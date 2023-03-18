@@ -3,8 +3,10 @@ import { waitForElement } from './utils.js';
 
 // Fix playlist scroll
 waitForElement('.g-mn', (dom) => {
+	if (document.querySelector('#list-scroll-visibility-controller')) return;
 	const listScrollVisibilityController = document.createElement('style');
 	listScrollVisibilityController.innerHTML = '';
+	listScrollVisibilityController.id = 'list-scroll-visibility-controller';
 	document.head.appendChild(listScrollVisibilityController);
 	const recalc = () => {
 		const listContainer = document.querySelector('.m-plylist-pl2 ul .lst');
