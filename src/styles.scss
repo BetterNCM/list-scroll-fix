@@ -1,0 +1,12 @@
+.g-mn {
+	.m-plylist:not(.m-plylist-recent), .u-cover ~ .mtwrap .lst {
+		> ul, .head + .j-flag {
+			.lst.fixed-scroll-management { // override ncm's scroll overflow management
+				padding: 0;
+				> .pl-di {
+					display: block;
+				}
+			}
+		}
+	}
+}
